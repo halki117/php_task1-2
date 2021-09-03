@@ -31,9 +31,9 @@
 </head>
 <body>
   
-  <form action="" method="post">
+  <form method="post">
     <input type="text" name="word">
-    <input type="submit" value="検索">
+    <input type="submit" name="submit" value="検索">
   <!-- フォームから送信されるとトークンも一緒に送信される様にする。hidden属性とすることで画面に表示されない。 -->
     <input type="hidden" name="token" value="<?php echo $token; ?>">
   </form>
@@ -41,6 +41,10 @@
   <p>
     <?php
       if($result !== null){
+        if($fruits === ''){
+          echo "何かを入力してください";
+          return;
+        }
         if($result){
           echo "{$fruits}は、配列fruietsの中に含まれます";
         } else {  
