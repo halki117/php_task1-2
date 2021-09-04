@@ -4,7 +4,7 @@
   session_start();
 
   // リロードした際は、新しくトークンが発行されフォームから送られてきたトークンと異なる様になる。
-  if ($_POST["token"] == $_SESSION["token"])
+  if ( $_POST["token"] == $_SESSION["token"])
   {
     $fruits_array = ['apple', 'orange', 'strawbery'];
 
@@ -40,7 +40,7 @@
 
   <p>
     <?php
-      if($result !== null){
+      if($_POST['submit']){
         if($fruits === ''){
           echo "何かを入力してください";
           return;
